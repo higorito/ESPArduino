@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'/>
+<title>ESP8266</title>
+<link rel="shortcut icon" href="icon.png" type="image/x-icon">
+<style>
+body{
+text-align: left;
+font-family: sans-serif;
+font-size:14px;
+padding: 25px;
+}
+p{
+color:#444;
+}button{
+outline: none;
+border: 2px solid #000000;
+border-radius:18px;
+background-color:rgb(139, 139, 139);
+color: #000000;
+padding: 10px 50px;
+}
+.button1 {background-color: rgb(0, 238, 12);} 
+.button2 {background-color: rgb(255, 0, 0);} 
+button:active{
+color: #fff;
+background-color:#1fa3ec;
+}
+</style>
+</head>
+<body>
+<p>Semáfaro 1</p>
+<p><a href='?acao=liberar1'><button>Liberar</button></a></p>
+<p><a href='?acao=fechar1'><button>Fechar</button></a></p>
+<p>Semáfaro 2</p>
+<p><a href='?acao=liberar2'><button>Liberar</button></a></p>
+<p><a href='?acao=fechar2'><button>Fechar</button></a></p>
+<p>Semáfaro 3</p>
+<p><a href='?acao=liberar2'><button>Liberar</button></a></p>
+<p><a href='?acao=fechar2'><button>Fechar</button></a></p>
+</body>
+</html>;
