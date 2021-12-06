@@ -49,6 +49,50 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  {
+
+  WiFiClient client = server.available();
+    if (!client){
+      return;}  //se não tiver usuários não faz nada
+    }
+Serial.println("Usuário conectou-se");
+
+  while (!client.available())
+  {
+delay(100);
+  }
+
+  String req = client.readStringUntil('\r');
+  Serial.print("Requisição: ");
+  Serial.println(req);
+
+  //PAGINA HTML AQUI 
+
+
+
+
+  //...
+
+  client.print(html);
+  client.flush();
+
+  //verificar ações dos botoes em html
+  if(req.indexOf("acao=liberar1))!=-1)
+  {
+      digitalWrite(0, HIGH);
+  }
+  else if(res.indexOf(acao=fechar1)!=-1){
+    digitalWrite(0, LOW);
+  }
+   else if(res.indexOf(acao=liberar2)!=-1){
+   digitalWrite(2, HIGH);
+  }
+   else if(res.indexOf(acao=fechar2)!=-1){
+   digitalWrite(2, LOW);
+  }
+
+  client.stop();
+
+  Serial.println("Desconectado");
 
 }
